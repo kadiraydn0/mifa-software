@@ -1,0 +1,19 @@
+{
+  "name": "mifa-software",
+  "version": "1.0.0",
+  "description": "Mifa Bilgi Islem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadiraydn0/mifa-software.git"
+  },
+  "author": "Kadir Aydin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadiraydn0/mifa-software/issues"
+  },
+  "homepage": "https://github.com/kadiraydn0/mifa-software#readme"
+}
