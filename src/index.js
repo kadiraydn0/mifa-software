@@ -12,7 +12,6 @@ const router = express.Router()
 const port = process.env.PORT
 const host = process.env.HOST
 
-router.get("/", (req, res) => res.send("SA"))
 
 // Material
 router.post("/create/material", createMaterialHandler)
