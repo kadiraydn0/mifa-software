@@ -1,5 +1,5 @@
 import express from "express";
-import { createMaterial, findAndUpdate, findMaterial, findMaterialName } from "../service/material.service.js";
+import { createMaterial, findAllMaterial, findAndUpdate, findMaterial, findMaterialName } from "../service/material.service.js";
 
 
 export async function createMaterialHandler(req, res) {
@@ -17,7 +17,7 @@ export async function createMaterialHandler(req, res) {
 
 export async function addMaterialHandler(req, res) {
     try {
-        const _id = req.params.materialId
+        const _id = req.body.materialId
         const data = req.body.amount
         let material = await findMaterial(_id)
         let updateMaterial = await findAndUpdate(_id, data + material.amount)
@@ -25,4 +25,10 @@ export async function addMaterialHandler(req, res) {
     } catch (e) {
         res.status(404).json({ success: false, error: e.message })
     }
+}
+
+
+export async function getAllMaterialHandler(req, res) {
+    const material = await findAllMaterial()
+    res.send(material)
 }

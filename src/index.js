@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import connect from "./db/connect.js";
-import { addMaterialHandler, createMaterialHandler } from "./controller/material.controller.js";
+import { addMaterialHandler, createMaterialHandler, getAllMaterialHandler } from "./controller/material.controller.js";
 import { createProductHandler, createProductSchemaHandler } from "./controller/product.controller.js";
 import cors from "cors"
 
@@ -16,7 +16,8 @@ router.get("/", (req, res) => res.send("SA"))
 
 // Material
 router.post("/create/material", createMaterialHandler)
-router.put("/add/material/:materialId", addMaterialHandler)
+router.put("/add/material", addMaterialHandler)
+router.get("/get/material", getAllMaterialHandler)
 
 
 // Product
