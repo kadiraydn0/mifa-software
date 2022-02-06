@@ -1,6 +1,6 @@
 import express from "express";
 import { findAndUpdate, findMaterial } from "../service/material.service.js";
-import { createProductSchema, findProductName, findProductSchema, findProductAndUpdate } from "../service/product.service.js";
+import { createProductSchema, findProductName, findProductSchema, findProductAndUpdate, findAllProductSchema } from "../service/product.service.js";
 
 
 // @route   POST| /create/product
@@ -50,4 +50,10 @@ export async function createProductHandler(req, res) {
     } catch (e) {
         res.status(400).json({ success: false, messaga: e.message })
     }
+}
+
+
+export async function getAllProductSchemaHandler(req, res) {
+    let schemas = await findAllProductSchema()
+    res.send(schemas)
 }

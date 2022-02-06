@@ -19,3 +19,7 @@ export function findProductSchema(id) {
 export function findProductAndUpdate(id, input) {
     return Product.findOneAndUpdate({ _id: id }, { stock: input })
 }
+
+export function findAllProductSchema() {
+    return Product.find()
+}

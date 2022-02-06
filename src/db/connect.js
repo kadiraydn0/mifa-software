@@ -2,10 +2,7 @@ import mongoose from "mongoose"
 
 function connect() {
     return mongoose
-        .connect(process.env.DB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
+        .connect(process.env.DB_URI)
         .then(() => {
             console.log("Database is successfuly connect.")
         })
